@@ -13,7 +13,7 @@ let textgained;
 let smaller = ("");
 let splitrecieved = ("");
 const Youdirected = ['you', 'thee', 'deg', 'du', 'thy', 'tu'];
-const dislike = ['dislike', 'hate', 'gross', 'disgusting', 'fuck', 'bad','depressing','demens','insanus','vacerrousus','bad','poorly','sick'];
+const Dislike = ['dislike', 'hate', 'gross', 'disgusting', 'fuck', 'bad','depressing','demens','insanus','vacerrousus','bad','poorly','sick'];
 const meMyselfandI = ['i','am','me','myself','meg','eg','min','mine','ego']
 
 
@@ -71,7 +71,7 @@ function sendMessage() {
                 updateView();
                 console.log(checkText);
             }
-            else if (dislike.some(checkText)) {
+            else if (Dislike.some(checkText)) {
                 Reply = "No U!"
                 updateView();
 
@@ -87,7 +87,7 @@ function sendMessage() {
             updateView();
             console.log(checkText);
         }
-        else if (dislike.some(checkText)) {
+        else if (Dislike.some(checkText)) {
             Reply = "No U!"
             updateView();
 
@@ -102,22 +102,33 @@ function sendMessage() {
     }
     else if (meMyselfandI.some(checkText) === true) {
         if (Feeling.some(checkText) === true) {
-            if (dislike.some(checkText) === false) {
+            if (Dislike.some(checkText) === false) {
                 Reply = "That's good to hear";
                 updateView();
             }
-            else if (dislike.some(checkText) === true) {
+            else if (Dislike.some(checkText) === true) {
                 Reply = "I am sorry to hear that."
                 updateView();
-            
+
             }
-       
+
         }
         else Reply = "I don't understand what you are trying to say about yourself";
         updateView();
         console.log(checkText)
 
     }
+    else if (Feeling.some(checkText) === true) {
+        Reply = "Don't quite understand."
+        updateView();
+    }
+    else if (Dislike.some(checkText) === true) {
+        Reply = "Vulgar."
+        updateView();
+    }
+    else 
+        Reply = "Now im really lost."
+    updateView();
 }
 function constructReply() {
 
