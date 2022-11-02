@@ -1,0 +1,16 @@
+﻿body
+{
+}
+div.topdog {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr auto;
+    grid-template-areas:'head head';
+}
+.header{
+    grid-area:head;
+}
+.fontsizeandspacing{
+    font-size:24px;
+    word-spacing:4px;
+}
