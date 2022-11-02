@@ -29,7 +29,7 @@ function updateView() {
 <div><input type="text" oninput="textRecieved = this.value"><br><br>
 <button onclick="sendMessage()">Send Message</button></div>
 <br><br><br>
-<div class="fontsizeandspacing">Words the bot understands sorta:
+<div class="fontsizeandspacing">Words/combinations the bot understands sorta:
 <br><br><br> 
  Hello, Greetings, Hei, Sup, Whatsup, Salutations, Ave, Salve, Salvete, Hey.
 <br>
