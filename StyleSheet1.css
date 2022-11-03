@@ -3,14 +3,30 @@
 }
 div.topdog {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 3fr auto;
-    grid-template-areas:'head head';
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows:auto;
+    grid-template-areas:'. head .'
+                        '. main .'
+                        '. footer .';
 }
-.header{
+.head{
     grid-area:head;
 }
 .fontsizeandspacing{
     font-size:24px;
     word-spacing:4px;
+}
+.empty{
+    grid-area:empty;
+}
+.footer{
+    grid-area:footer;
+}
+.main {
+    grid-area:main;
+}
+.sprite {
+    width:143px;
+    height:150px;
+    background:url(img/Robo.Png) 580px -200px;
 }

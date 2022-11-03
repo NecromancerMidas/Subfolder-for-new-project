@@ -23,13 +23,13 @@ updateView();
 function updateView() {
     document.getElementById("base").innerHTML = `
 
-<div><div></div><br><br><br>
-
-<div id="thereplybox"></div>
-<div><input type="text" oninput="textRecieved = this.value"><br><br>
+<div  class="topdog"><div></div><br><br><br>
+<div class="head"><div class="sprite"></div></div>
+<div class="main" id="thereplybox"></div>
+<div class="main"><input type="text" oninput="textRecieved = this.value"><br><br>
 <button onclick="sendMessage()">Send Message</button></div>
 <br><br><br>
-<div class="fontsizeandspacing">Words/combinations the bot understands sorta:
+<div class="fontsizeandspacing footer">Words/combinations the bot understands sorta:
 <br><br><br> 
  Hello, Greetings, Hei, Sup, Whatsup, Salutations, Ave, Salve, Salvete, Hey.
 <br>
