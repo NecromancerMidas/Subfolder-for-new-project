@@ -142,7 +142,7 @@ function robotResponse() {
         thesprite.style.backgroundPosition = "422px 7px";
         updateView();
         console.log(robotResponse);
-    }
+    }//use classes instead make classes and change the sprites class instead to the positions you want. Remember this Midas.
 }
 function checkText(message) {
 
