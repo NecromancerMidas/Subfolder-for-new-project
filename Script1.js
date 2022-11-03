@@ -24,8 +24,7 @@ function updateView() {
     document.getElementById("base").innerHTML = `
 
 <div  class="topdog"><div></div><br><br><br>
-<div class="head"><div class="sprite"></div></div>
-<div class="main" id="thereplybox"></div>
+<div class="head"><div class="sprite"></div><div class="main" id="thereplybox"></div></div>
 <div class="main"><input type="text" oninput="textRecieved = this.value"><br><br>
 <button onclick="sendMessage()">Send Message</button></div>
 <br><br><br>
