@@ -14,7 +14,7 @@ let smaller = ("");
 let splitrecieved = ("");
 const Youdirected = ['you', 'thee', 'deg', 'du', 'thy', 'tu'];
 const Dislike = ['dislike', 'hate', 'gross', 'disgusting', 'fuck', 'bad','depressing','demens','insanus','vacerrousus','bad','poorly','sick'];
-const meMyselfandI = ['i','am','me','myself','meg','eg','min','mine','ego']
+const meMyselfandI = ['i', 'am', 'me', 'myself', 'meg', 'eg', 'min', 'mine', 'ego']
 
 
 
@@ -24,7 +24,7 @@ function updateView() {
     document.getElementById("base").innerHTML = `
 
 <div  class="topdog"><div></div><br><br><br>
-<div class="head"><div class="sprite"></div><div class="main" id="thereplybox"></div></div>
+<div class="head"><div class="sprite" id="spritey"></div><div class="main" id="thereplybox"></div></div>
 <div class="main"><input type="text" oninput="textRecieved = this.value"><br><br>
 <button onclick="sendMessage()">Send Message</button></div>
 <br><br><br>
@@ -67,8 +67,10 @@ function sendMessage() {
         if (Youdirected.some(checkText) === true) {
             if (Feeling.some(checkText) === true) {
                 Reply = "I am feeling good, how are you?";
-                updateView();
                 console.log(checkText);
+                console.log(sendMessage);
+                robotResponse();
+                updateView();
             }
             else if (Dislike.some(checkText)) {
                 Reply = "No U!"
@@ -77,14 +79,17 @@ function sendMessage() {
             }
         }
         else Reply = "Salutations!";
+        robotResponse();
         updateView();
         console.log(sendMessage);
     }
     else if (Youdirected.some(checkText) === true) {
         if (Feeling.some(checkText) === true) {
             Reply = "I am feeling good, how are you?";
+            robotResponse();
             updateView();
             console.log(checkText);
+
         }
         else if (Dislike.some(checkText)) {
             Reply = "No U!"
@@ -129,8 +134,15 @@ function sendMessage() {
         Reply = "Now im really lost."
     updateView();
 }
-function constructReply() {
 
+function robotResponse() {
+    let thesprite = document.getElementById("spritey")
+    if (Reply === "I am feeling good, how are you?" || Reply === "That's good to hear" || Reply === "Salutations!") {
+        
+        thesprite.style.backgroundPosition = "422px 7px";
+        updateView();
+        console.log(robotResponse);
+    }
 }
 function checkText(message) {
 
