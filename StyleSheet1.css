@@ -1,13 +1,14 @@
 ﻿body
 {
+    background-color:lightsteelblue;
 }
 div.topdog {
     display: grid;
-    grid-template-columns: 2fr 4fr 2fr;
+    grid-template-columns: 2fr 3fr 3fr;
     grid-template-rows:auto;
-    grid-template-areas:'. head replybox'
+    grid-template-areas:'. head .'
                         '. main .'
-                        '. footer .';
+                        'replybox replybox footer';
 }
 .head{
     grid-area:head;
@@ -31,7 +32,12 @@ div.topdog {
     background:url(img/Robo.Png) 580px -200px;
 }
 .replybox {
-    margin:10px 10px 10px 100px;
+    grid-area:replybox;
+    display:grid;
+    grid-template-areas:'chatbox otherchatbox'
+                         'chatbox otherchatbox';
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto;
 }
 .otherone {
     width:143px;
@@ -42,4 +48,10 @@ div.topdog {
     width: 143px;
     height: 150px;
     background: url(img/Robo.Png) 733px -592px;
+}
+.chatbox {
+    grid-area:chatbox;
+}
+.otherchatbox {
+    grid-area:otherchatbox;
 }

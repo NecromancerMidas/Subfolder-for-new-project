@@ -25,10 +25,12 @@ function updateView() {
     document.getElementById("base").innerHTML = `
 
 <div  class="topdog"><div></div><br><br><br>
-<div class="head"><div class="sprite" id="spritey"></div><div class="main" id="thereplybox"></div></div>
-<div class="main"><input type="text" oninput="textRecieved = this.value"><br><br>
+<div class="head"><div class="sprite" id="spritey"></div></div>
+<div class="replybox"><div class="chatbox" id="userbox"></div><div class="otherchatbox" id="thereplybox"></div><input type="text" oninput="textRecieved = this.value"><br><br>
 <button onclick="sendMessage()">Send Message</button></div>
 <br><br><br>
+
+
 <div class="fontsizeandspacing footer">Words/combinations the bot understands sorta:
 <br><br><br> 
  Hello, Greetings, Hei, Sup, Whatsup, Salutations, Ave, Salve, Salvete, Hey.
@@ -55,6 +57,7 @@ I, Am, Me, Myself, Meg, Eg, Min, Mine, Ego.
 
 
 `
+    document.getElementById("userbox").innerHTML = textRecieved;
     document.getElementById("thereplybox").innerHTML = Reply;
     document.getElementById("spritey").className = `${thespriteything}`;
 }
@@ -160,6 +163,10 @@ function robotResponse() {
 function checkText(message) {
 
     return splitrecieved.includes(message);
+}
+function littleanimation() {  //do this later 
+    let id = null;
+    document.getElementById("spritey");
 }
 
 
