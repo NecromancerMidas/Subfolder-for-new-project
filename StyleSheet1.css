@@ -33,3 +33,13 @@ div.topdog {
 .replybox {
     margin:10px 10px 10px 100px;
 }
+.otherone {
+    width:143px;
+    height:150px;
+    background:url(img/Robo.Png) 733px -420px;
+}
+.sprite2 {
+    width: 143px;
+    height: 150px;
+    background: url(img/Robo.Png) 733px -592px;
+}

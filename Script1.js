@@ -15,6 +15,7 @@ let splitrecieved = ("");
 const Youdirected = ['you', 'thee', 'deg', 'du', 'thy', 'tu'];
 const Dislike = ['dislike', 'hate', 'gross', 'disgusting', 'fuck', 'bad','depressing','demens','insanus','vacerrousus','bad','poorly','sick'];
 const meMyselfandI = ['i', 'am', 'me', 'myself', 'meg', 'eg', 'min', 'mine', 'ego']
+let thespriteything = "sprite";
 
 
 
@@ -55,6 +56,7 @@ I, Am, Me, Myself, Meg, Eg, Min, Mine, Ego.
 
 `
     document.getElementById("thereplybox").innerHTML = Reply;
+    document.getElementById("spritey").className = `${thespriteything}`;
 }
 
 
@@ -74,6 +76,7 @@ function sendMessage() {
             }
             else if (Dislike.some(checkText)) {
                 Reply = "No U!"
+                robotResponse();
                 updateView();
 
             }
@@ -93,11 +96,13 @@ function sendMessage() {
         }
         else if (Dislike.some(checkText)) {
             Reply = "No U!"
+            robotResponse();
             updateView();
 
         }
         else
             Reply = "I don't know what you are trying to say about me."
+        robotRespone();
         updateView();
 
 
@@ -124,25 +129,33 @@ function sendMessage() {
     }
     else if (Feeling.some(checkText) === true) {
         Reply = "Don't quite understand."
+        robotResponse();
         updateView();
     }
     else if (Dislike.some(checkText) === true) {
         Reply = "Vulgar."
+        robotResponse();
         updateView();
     }
     else 
         Reply = "Now im really lost."
+    robotResponse();
     updateView();
 }
 
 function robotResponse() {
-    let thesprite = document.getElementById("spritey")
     if (Reply === "I am feeling good, how are you?" || Reply === "That's good to hear" || Reply === "Salutations!") {
-        
-        thesprite.style.backgroundPosition = "422px 7px";
+        thespriteything = "otherone";
+
         updateView();
         console.log(robotResponse);
-    }//use classes instead make classes and change the sprites class instead to the positions you want. Remember this Midas.
+    }
+    else if (Reply === "No U!" || Reply === "Vulgar.") {
+        thespriteything = "sprite2";
+    }
+    else
+        thespriteything = "sprite";
+        //use classes instead make classes and change the sprites class instead to the positions you want. Remember this Midas.
 }
 function checkText(message) {
 
