@@ -149,8 +149,8 @@ function sendMessage() {
 function robotResponse() {
     if (Reply === "I am feeling good, how are you?" || Reply === "That's good to hear" || Reply === "Salutations!") {
         thespriteything = "otherone";
-
         updateView();
+        setTimeout(returnface, 1000);
         console.log(robotResponse);
     }
     else if (Reply === "No U!" || Reply === "Vulgar.") {
@@ -167,6 +167,10 @@ function checkText(message) {
 function littleanimation() {  //do this later 
     let id = null;
     document.getElementById("spritey");
+}
+function returnface() {
+    thespriteything = "sprite";
+    updateView();
 }
 
 
